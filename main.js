@@ -1,15 +1,15 @@
-const electron = require('electron')
+const electron = require('electron');
+const devTron = require('devtron').install();
 // Module to control application life.
 const app = electron.app
 // Module to create native browser window.
-const BrowserWindow = electron.BrowserWindow
-const menu = new electron.Menu();
-
-menu.append(new MenuItem({
-  label: 'Print',
-  accelerator: 'CmdOrCtrl+P',
-  click: () => { console.log('time to print stuff') }
-}))
+// const menu = new electron.Menu();
+//
+// menu.append(new MenuItem({
+//   label: 'Print',
+//   accelerator: 'CmdOrCtrl+P',
+//   click: () => { console.log('time to print stuff') }
+// }))
 
 const path = require('path')
 const url = require('url')
@@ -29,7 +29,7 @@ function createWindow () {
   //   slashes: true
   // }))
 
-  mainWindow.loadURL('http://10.211.249.215:5000');
+  mainWindow.loadURL(`file://${__dirname}/client/dist/index.html`);
 
   // Open the DevTools.
   // mainWindow.webContents.openDevTools()
