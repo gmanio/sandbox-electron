@@ -42,5 +42,6 @@ yarn-error.log
 # System Files
 .DS_Store
 Thumbs.db
+<<<<<<< HEAD
 /build-darwin-x64
-./client/node_modules
+/client/node_modules
