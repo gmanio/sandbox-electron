@@ -1,7 +1,7 @@
 const electron = require('electron');
 const devTron = require('devtron').install();
 // Module to control application life.
-const app = electron.app
+const app = electron.app;
 // Module to create native browser window.
 // const menu = new electron.Menu();
 //
