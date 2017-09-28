@@ -4,9 +4,8 @@ let win, serve;
 const args = process.argv.slice(1);
 serve = args.some(val => val === '--serve');
 
-if (serve) {
-  require('electron-reload')(__dirname, {
-  });
+if ( serve ) {
+  require('electron-reload')(__dirname, {});
 }
 
 function createWindow() {
@@ -26,7 +25,7 @@ function createWindow() {
   win.loadURL('file://' + __dirname + '/index.html');
 
   // Open the DevTools.
-  if (serve) {
+  if ( serve ) {
     win.webContents.openDevTools();
   }
 
@@ -50,7 +49,7 @@ try {
   app.on('window-all-closed', () => {
     // On OS X it is common for applications and their menu bar
     // to stay active until the user quits explicitly with Cmd + Q
-    if (process.platform !== 'darwin') {
+    if ( process.platform !== 'darwin' ) {
       app.quit();
     }
   });
@@ -58,12 +57,12 @@ try {
   app.on('activate', () => {
     // On OS X it's common to re-create a window in the app when the
     // dock icon is clicked and there are no other windows open.
-    if (win === null) {
+    if ( win === null ) {
       createWindow();
     }
   });
 
-} catch (e) {
+} catch ( e ) {
   // Catch Error
   // throw e;
 }
