@@ -2,6 +2,7 @@
   "name": "sandbox-electron",
   "version": "0.0.1",
   "license": "MIT",
+  "main": "app.js",
   "scripts": {
     "ng": "ng",
     "start": "ng serve -p 4200",
