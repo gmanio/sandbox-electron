@@ -6,5 +6,5 @@ gulp.task('default', function () {
 // Restart browser process
   gulp.watch('./app.js', electron.restart);
 // Reload renderer process
-  gulp.watch(['index.html'], electron.reload);
+//   gulp.watch(['index.html'], electron.reload);
 });
