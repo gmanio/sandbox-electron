@@ -1,5 +1,5 @@
 const { app, BrowserWindow, ipcMain, dialog, Menu, MenuItem } = require('electron');
-var client                                                    = require('electron-connect').client;
+// var client                                                    = require('electron-connect').client;
 const path                                                    = require('path');
 const url                                                     = require('url');
 const Rx                                                      = require('rxjs');
@@ -33,9 +33,8 @@ function createWindow() {
 
 
   // and load the index.html of the app.
-  mainWindow.loadURL('http://localhost:4200');
-
-  // mainWindow.loadURL('http://hscenc.com/');
+  // mainWindow.loadURL('http://localhost:4200');
+  mainWindow.loadURL('file://' + __dirname + '/dist/index.html')
   // mainWindow.loadURL('https://nodejs.org/en/')
   // Open the DevTools.
   // mainWindow.webContents.openDevTools();
@@ -138,7 +137,7 @@ function createWindow() {
 
   const menu = Menu.buildFromTemplate(template);
   Menu.setApplicationMenu(menu);
-  client.create(mainWindow);
+  // client.create(mainWindow);
 }
 
 // This method will be called when Electron has finished
