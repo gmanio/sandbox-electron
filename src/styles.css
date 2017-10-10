@@ -7,3 +7,12 @@ button { -webkit-app-region: no-drag; }
   -webkit-app-region: drag;
 }
 p { margin: 0; width:100%;text-align: center; height: 40px; line-height: 40px; background: #999 }
+::-webkit-scrollbar {
+  background-color: #fff;
+  width: .3em
+}
+
+::-webkit-scrollbar-thumb:window-inactive,
+::-webkit-scrollbar-thumb {
+  background:  black
+}

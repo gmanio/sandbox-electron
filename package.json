@@ -7,7 +7,7 @@
   "main": "./app.js",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --host 0.0.0.0 --port=4200 --disable-host-check=true",
+    "start": "ng serve --host 0.0.0.0 --port=3000 --disable-host-check=true",
     "build": "ng build --prod --aot --build-optimizer --output-hashing none --named-chunks true --bh .",
     "electron:dev": "npm run start && gulp",
     "electron:prod": "npm run build:prod && electron ./dist",

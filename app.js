@@ -26,16 +26,15 @@ function createWindow() {
     frame: false,
     titleBarStyle: 'hidden',
     center: true,
-    minimizable: false,
+    minimizable: true,
     maximizable: false,
     resizable: false,
   });
 
-
   // and load the index.html of the app.
   // mainWindow.loadURL('http://localhost:4200');
-  mainWindow.loadURL('file://' + __dirname + '/dist/index.html')
-  // mainWindow.loadURL('https://nodejs.org/en/')
+  // mainWindow.loadURL('file://' + __dirname + '/dist/index.html')
+  mainWindow.loadURL('http://localhost:3000');
   // Open the DevTools.
   // mainWindow.webContents.openDevTools();
 
