@@ -1,14 +1,16 @@
 {
   "name": "sandbox-electron",
   "version": "0.0.1",
-  "authors": "gmanPark",
+  "author": "gmanPark",
   "description": "this is first app",
   "license": "MIT",
   "main": "./app.js",
   "scripts": {
+    "postinstall": "electron-builder install-app-deps",
+    "dist": "electron-builder",
     "ng": "ng",
     "start": "ng serve --host 0.0.0.0 --port=3000 --disable-host-check=true",
-    "build": "ng build --prod --aot --build-optimizer --output-hashing none --named-chunks true --bh .",
+    "web:build": "ng build --prod --aot --build-optimizer --output-hashing none --named-chunks true --bh .",
     "electron:dev": "npm run start && gulp",
     "electron:prod": "npm run build:prod && electron ./dist",
     "electron:linux": "npm run build:prod && node package.js --asar --platform=linux --arch=x64",
@@ -17,7 +19,14 @@
     "make:mac": "electron-packager ./ --platform=darwin --arch=x64 --out=./build",
     "test": "karma start ./karma.conf.js",
     "pree2e": "webdriver-manager update --standalone false --gecko false --quiet",
-    "e2e": "protractor ./protractor.conf.js"
+    "e2e": "protractor ./protractor.conf.js",
+    "package-mac": "electron-packager . myApp --overwrite --asar=true --platform=darwin --arch=x64 --icon=src/favicon.ico --prune=true --out=release-builds",
+    "package-win": "electron-packager . --overwrite --asar=true --platform=win32 --arch=ia32 --icon=src/favicon.ico --prune=true --out=release-builds --version-string.CompanyName='CE' --version-string.FileDescription='CE' --version-string.ProductName='ElectronTutorialApp'",
+    "package-linux": "electron-packager . --overwrite --asar=true --platform=linux --arch=x64 --icon=src/favicon.ico --prune=true --out=release-builds",
+    "create-installer-mac": "electron-installer-dmg ./release-builds/sandbox-electron-app-darwin-x64/sandbox-electron-app.app sandbox-electron-app --out=release-builds --overwrite"
+  },
+  "optionalDependencies": {
+    "7zip-bin-mac": "^1.x.x"
   },
   "dependencies": {
     "@angular/animations": "^4.4.4",
@@ -50,6 +59,7 @@
     "css-loader": "^0.28.1",
     "cssnano": "^3.10.0",
     "electron": "^1.8.1",
+    "electron-builder": "^19.35.1",
     "electron-connect": "^0.6.2",
     "electron-winstaller": "^2.6.3",
     "exports-loader": "^0.6.3",
@@ -80,5 +90,11 @@
     "webpack": "~3.5.5",
     "webpack-concat-plugin": "1.4.0",
     "webpack-dev-server": "~2.7.1"
+  },
+  "build": {
+    "appId": "your.id",
+    "mac": {
+      "category": "your.app.category.type"
+    }
   }
 }
