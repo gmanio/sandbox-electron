@@ -95,6 +95,10 @@
     "appId": "your.id",
     "mac": {
       "category": "your.app.category.type"
+    },
+    "nsis": {
+      "oneClick": false,
+      "runAfterFinish": false
     }
   }
 }

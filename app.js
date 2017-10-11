@@ -23,18 +23,17 @@ function createWindow() {
   mainWindow = new BrowserWindow({
     width: 800,
     height: 600,
-    frame: false,
-    titleBarStyle: 'hidden',
+    frame: true,
     center: true,
     minimizable: true,
     maximizable: false,
-    resizable: false,
+    resizable: true
   });
 
   // and load the index.html of the app.
   // mainWindow.loadURL('http://localhost:4200');
   // mainWindow.loadURL('file://' + __dirname + '/dist/index.html')
-  mainWindow.loadURL('http://localhost:5000');
+  mainWindow.loadURL('http://www.naver.com');
   // Open the DevTools.
   // mainWindow.webContents.openDevTools();
 
