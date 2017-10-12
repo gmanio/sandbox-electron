@@ -2,6 +2,7 @@ import { AfterViewInit, Component } from '@angular/core';
 import { ElectronService } from 'ngx-electron';
 
 declare var window;
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -22,6 +23,7 @@ export class AppComponent implements AfterViewInit {
     // let pong: string = this.electronService.ipcRenderer.sendSync('asynchronous-message');
     // console.log(pong);
     console.log('test');
+
   }
 
   onClickNative() {
@@ -37,8 +39,20 @@ export class AppComponent implements AfterViewInit {
     //   }
     // });
 
+    setInterval(() => {
+      const myNotification = new Notification('Title', {
+        body: 'Lorem Ipsum Dolor Sit Amet'
+      })
+
+
+      console.log(myNotification);
+      myNotification.onclick = () => {
+        console.log('Notification clicked')
+      }
+    }, 5000);
+
+
     var constraints = {
-      audio: true,
       video: {
         width: { ideal: 400 },
         height: { ideal: 300 }

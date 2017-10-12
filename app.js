@@ -31,11 +31,11 @@ function createWindow() {
   });
 
   // and load the index.html of the app.
-  // mainWindow.loadURL('http://localhost:4200');
+  mainWindow.loadURL('http://10.211.249.215:3000');
   // mainWindow.loadURL('file://' + __dirname + '/dist/index.html')
-  mainWindow.loadURL('http://www.naver.com');
+  // mainWindow.loadURL('http://www.naver.com');
   // Open the DevTools.
-  // mainWindow.webContents.openDevTools();
+  mainWindow.webContents.openDevTools();
 
 
   // Emitted when the window is closed.

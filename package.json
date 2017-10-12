@@ -8,9 +8,8 @@
   "scripts": {
     "postinstall": "electron-builder install-app-deps",
     "dist": "electron-builder",
-    "ng": "ng",
     "start": "ng serve --host 0.0.0.0 --port=3000 --disable-host-check=true",
-    "web:build": "ng build --prod --aot --build-optimizer --output-hashing none --named-chunks true --bh .",
+    "build": "ng build --prod --aot --build-optimizer --output-hashing none --named-chunks true --bh .",
     "electron:dev": "npm run start && gulp",
     "electron:prod": "npm run build:prod && electron ./dist",
     "electron:linux": "npm run build:prod && node package.js --asar --platform=linux --arch=x64",
@@ -92,7 +91,7 @@
     "webpack-dev-server": "~2.7.1"
   },
   "build": {
-    "appId": "your.id",
+    "appId": "com.example.sandbox",
     "mac": {
       "category": "your.app.category.type"
     },
